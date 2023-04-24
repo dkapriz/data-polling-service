@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <RollingFile name="InfoLog" fileName="logs/info.log"
+                     filePattern="logs/info-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="1"/>
+        </RollingFile>
+        <RollingFile name="Exceptions" fileName="logs/exceptions.log"
+                     filePattern="logs/exceptions-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="1"/>
+        </RollingFile>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </appenders>
+    <loggers>
+        <root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="InfoLog"/>
+            <AppenderRef ref="Exceptions" level="error"/>
+        </root>
+    </loggers>
+</configuration>
