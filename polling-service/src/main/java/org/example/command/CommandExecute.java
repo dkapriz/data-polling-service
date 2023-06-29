@@ -27,11 +27,11 @@ public class CommandExecute {
      * Метод производит запуск команды в командной строке операционной системы. После запуска команды в отдельном
      * потоке происходит ожидание ее выполнения и в случае успешного выполнения возвращается строковый результат.
      *
-     * @param command - команда запроса адаптированная под тип операционной системы
+     * @param command  - команда запроса адаптированная под тип операционной системы
      * @param encoding - кодировка, в которой операционная системы производит вывод результата выполнения команды
      * @return String - результат выполнения команды
      * @throws CommandException - Ошибка выполнения команды (ошибка создания процесса, таймаут ожидания выполнения,
-     * команда прервана, ошибки другого характера)
+     *                          команда прервана, ошибки другого характера)
      */
     public static String run(List<String> command, String encoding) throws CommandException {
         String result = "Request failed";
@@ -43,6 +43,7 @@ public class CommandExecute {
             process = builder.start();
         } catch (IOException e) {
             log.error(EX_MSG_PROCESS_CREATION_ERROR);
+            log.debug(e.getMessage());
             throw new CommandException(EX_MSG_PROCESS_CREATION_ERROR);
         }
 
@@ -53,6 +54,7 @@ public class CommandExecute {
         try {
             exitCode = process.waitFor();
         } catch (InterruptedException e) {
+            log.debug(e.getMessage());
             log.error(EX_MSG_INTERRUPT_ERROR);
             throw new CommandException(EX_MSG_INTERRUPT_ERROR);
         }
@@ -60,19 +62,20 @@ public class CommandExecute {
         try {
             result = future.get(TIMEOUT, TimeUnit.SECONDS);
         } catch (InterruptedException ex) {
+            log.debug(ex.getMessage());
             log.error(EX_MSG_TIMEOUT);
             Thread.currentThread().interrupt();
         } catch (Exception ex) {
+            log.debug(ex.getMessage());
             log.error(EX_MSG_TIMEOUT);
             ex.printStackTrace();
             future.cancel(true);
             throw new CommandException(EX_MSG_TIMEOUT);
         }
         executorService.shutdown();
-        if(result.isEmpty()){
+        if (result.isEmpty()) {
             throw new CommandException(EX_MSG_UNKNOWN_ERROR);
         }
-        log.info("Successful execution of the command: " + command);
         return result;
     }
 }

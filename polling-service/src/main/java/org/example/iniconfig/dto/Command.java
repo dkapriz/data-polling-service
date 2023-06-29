@@ -13,13 +13,13 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class IniConfigDto {
-    @JsonProperty("ServerSettings")
-    ServerSettings serverSettings;
-    @JsonProperty("Exec_PingHost")
-    PingHost pingHost;
-    @JsonProperty("Exec_CheckCPU")
-    Command checkCPU;
-    @JsonProperty("Script_CheckURL")
-    Command checkURL;
+public class Command {
+    @JsonProperty("Metric_name")
+    String metricName;
+    @JsonProperty("Exec_command")
+    String execCommand;
+    @JsonProperty("Metric_pattern")
+    String metricPattern;
+    @JsonProperty("Interval")
+    Integer interval;
 }

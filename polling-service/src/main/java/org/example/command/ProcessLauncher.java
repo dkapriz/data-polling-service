@@ -1,6 +1,5 @@
 package org.example.command;
 
-import org.example.StateResponseDto;
 import org.example.exceptions.CommandException;
 
 public interface ProcessLauncher {

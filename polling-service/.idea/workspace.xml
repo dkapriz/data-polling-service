@@ -5,34 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64c0d186-6142-4d68-9fb1-1bb14127697e" name="Changes" comment="added reading the configuration file and executing commands">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PollingTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/StateResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/CommandExecute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/LinuxLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/OperationSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/ProcessLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/ProcessLauncherFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/WaitStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/WindowsLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/CommandException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NoSuchOperationSystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/IniConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/IniConfigDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/MetricSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/ServerSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/rhino_1_7_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32937b07523542ba57ccedadbba568e7926be08a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36db5066e4acba8026e57fa78d9f173d96d8085a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3aa28ca84a647b895c1c372de373d8fba72d318b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/438c56474209176629917f1aaaac4e1cf31f765e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4ab2ba7d82408a13cbc6d6cca62fd813d2aeea27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/8076009995bc4893503977f94601580a43c45ab9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/90229f0fb5ed02e3478a488b181e2a2782767802" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c3125bd9c1876d098c46b27f2f0dc3acf39784fc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6905ea8b94ce12d5763b7bfd0e0027f568605b8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/PingHost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/script/NashornScript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/script/Script.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task/CheckCPUTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task/CheckURLTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task/PingHostTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task/TaskFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task/TaskType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PollingTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StateResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task/dto/StateResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/CommandExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/CommandExecute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/command/ProcessLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/ProcessLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/IniConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/IniConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/IniConfigDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/IniConfigDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/MetricSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/iniconfig/dto/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -80,6 +87,12 @@
       <recent name="C:\Users\d.kapriz\Desktop\SKJava\00_work\data-polling-service\polling-service" />
       <recent name="C:\Users\d.kapriz\Desktop\SKJava\00_work\data-polling-service\polling-service\src" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -89,7 +102,7 @@
       <module name="polling-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.task.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,8 +133,26 @@
       <workItem from="1682095082811" duration="1264000" />
       <workItem from="1682096680556" duration="10220000" />
       <workItem from="1682261536228" duration="582000" />
-      <workItem from="1682320963627" duration="22988000" />
+      <workItem from="1682320963627" duration="24173000" />
+      <workItem from="1682350765700" duration="718000" />
+      <workItem from="1682412625848" duration="3557000" />
+      <workItem from="1682440140203" duration="25000" />
+      <workItem from="1682595450429" duration="9792000" />
+      <workItem from="1683133257051" duration="79000" />
+      <workItem from="1683793297705" duration="37072000" />
+      <workItem from="1684007248941" duration="25928000" />
+      <workItem from="1684230265852" duration="1424000" />
+      <workItem from="1684240092626" duration="102000" />
+      <workItem from="1685432375702" duration="5036000" />
     </task>
+    <task id="LOCAL-00001" summary="added reading the configuration file and executing commands">
+      <created>1682347740052</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682347740052</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

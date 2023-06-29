@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.configuration2.INIConfiguration;
 import org.apache.commons.configuration2.SubnodeConfiguration;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.example.iniconfig.dto.Command;
 import org.example.iniconfig.dto.IniConfigDto;
 
 import java.io.FileReader;
@@ -22,21 +23,14 @@ import java.util.Map;
 public class IniConfig {
 
     public static final String DEFAULT_FILE_NAME = "config.ini";
-    public static final int MAX_STRING_LENGTH = 2;
+    public static final int MIN_STRING_LENGTH = 2;
     public static final int MIN_INTERVAL = 5;
     public static final String EX_MSG_WRONG_FIELD_VALUE = "Invalid field value: ";
     IniConfigDto config;
 
     /**
      * Метод читает файл конфигурации с расширением ini и создает POJO объект конфигурации.
-     * Производится проверка следующих полей файла:
-     * [ServerSettings]
-     * Collector=<String>
-     * Port=<String>
-     * Interval=<Integer>
-     * Console_encoding=<String>
-     * [MetricSettings]
-     * Ping_localhost=<String>
+     * Производится проверка полей файла
      *
      * @param filePath - имя файла или путь к файлу конфигурации
      * @return null - файл прочитан с ошибками или не прошел валидацию
@@ -91,7 +85,7 @@ public class IniConfig {
 
     private void checkConfigFile() throws ConfigurationException {
         if (config.getServerSettings().getCollector().isEmpty() ||
-                config.getServerSettings().getCollector().length() <= MAX_STRING_LENGTH) {
+                config.getServerSettings().getCollector().length() <= MIN_STRING_LENGTH) {
             throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + "Collector");
         }
         if (config.getServerSettings().getPort().isEmpty() ||
@@ -102,12 +96,33 @@ public class IniConfig {
             throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + "Interval");
         }
         if (config.getServerSettings().getConsoleEncoding().isEmpty() ||
-                config.getServerSettings().getConsoleEncoding().length() <= MAX_STRING_LENGTH) {
+                config.getServerSettings().getConsoleEncoding().length() <= MIN_STRING_LENGTH) {
             throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + "Console_encoding");
         }
-        if (config.getMetricSettings().getPingLocalhost().isEmpty() ||
-                config.getMetricSettings().getPingLocalhost().length() <= MAX_STRING_LENGTH) {
-            throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + "Console_encoding");
+        checkCommand(config.getCheckCPU(), "Check_CPU");
+        checkCommand(config.getCheckURL(), "Check_URL");
+        checkCommand(config.getPingHost(), "Ping_Host");
+        if (config.getPingHost().getVersion().isEmpty() ||
+                config.getPingHost().getVersion().length() <= MIN_STRING_LENGTH) {
+            throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + "Ping_Host - Version");
+        }
+    }
+
+    private void checkCommand(Command command, String name) throws ConfigurationException {
+        if (command.getMetricName().isEmpty() ||
+                command.getMetricName().length() <= MIN_STRING_LENGTH) {
+            throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + name + " - Metric_name");
+        }
+        if (command.getExecCommand().isEmpty() ||
+                command.getExecCommand().length() <= MIN_STRING_LENGTH) {
+            throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + name + " - Exec_command");
+        }
+        if (command.getMetricPattern().isEmpty() ||
+                command.getMetricPattern().length() <= MIN_STRING_LENGTH) {
+            throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + name + " - Metric_pattern");
+        }
+        if (command.getInterval() <= MIN_INTERVAL) {
+            throw new ConfigurationException(EX_MSG_WRONG_FIELD_VALUE + name + " - Interval");
         }
     }
 }

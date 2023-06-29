@@ -13,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class MetricSettings {
-    @JsonProperty("Ping_localhost")
-    String pingLocalhost;
+public class PingHost extends Command {
+    @JsonProperty("Version")
+    String version;
 }

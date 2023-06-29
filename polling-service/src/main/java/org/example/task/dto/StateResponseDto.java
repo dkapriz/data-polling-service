@@ -1,4 +1,4 @@
-package org.example;
+package org.example.task.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
@@ -23,6 +23,8 @@ public class StateResponseDto {
     String timestamp;
     @JsonProperty("metric_name")
     String metricName;
+    @JsonProperty("exec_command")
+    String execCommand;
     @JsonProperty("metric_value")
     String metricValue;
     @JsonProperty("execution_error")
@@ -43,10 +45,11 @@ public class StateResponseDto {
     public String toString() {
         return "{" + System.lineSeparator() +
                 "“hostname ”: " + hostname + ", " + System.lineSeparator() +
-                "“timestamp”: " + timestamp + ", " + System.lineSeparator() +
-                "“metric_name”: " + metricName + ", " + System.lineSeparator() +
-                "”metric_value”: " + metricValue + ", " + System.lineSeparator() +
-                "”execution_error”: " + executionError + System.lineSeparator() +
+                "“timestamp ”: " + timestamp + ", " + System.lineSeparator() +
+                "“metric_name ”: " + metricName + ", " + System.lineSeparator() +
+                "“exec_command ”: " + execCommand + ", " + System.lineSeparator() +
+                "”metric_value ”: " + metricValue + ", " + System.lineSeparator() +
+                "”execution_error ”: " + executionError + System.lineSeparator() +
                 "}" + System.lineSeparator();
     }
 }
